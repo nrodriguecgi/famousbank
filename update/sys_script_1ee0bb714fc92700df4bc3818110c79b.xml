@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_281581_famousban_operations</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Operation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var utils = new FamousBankUtils();
+	
+	//Vérifier que l'usager possède des droits de modification
+	if(gs.hasRole('x_281581_famousban.support'))
+	{
+		//Si opération complétée venant du statut de validation/rejeté, effectuer le dépot ou le retrait
+		if(current.statut == 3 && (previous.statut == 2 && current.statut == 4) )
+		{
+			if(current.type == 1){
+				utils.depositAccount(current, current.montant);
+			}
+			else if(current.type == 2){
+				utils.withdrawAccount(current, current.montant);
+			}
+			else{
+				gs.addErrorMessage("Unrecognized operation type. Operation aborted.");
+				current.setAbortAction(true);
+			}
+		}
+		//Modification opération complétée
+		else if(current.statut == 3)
+		{
+			//Si changement type opération ou montant opération, annuler l'opération précédente
+			if(current.type != previous.type || current.montant != previous.montant)
+			{
+				//Annuler dépôt
+				if(previous.type == 1){
+					//Tenter d'annuler le dépot. Si ça échoue, sortir tout de suite
+					if(!utils.withdrawAccount(current, previous.montant)){
+						return;
+					}
+				}
+				//Annuler retrait
+				else if(previous.type == 2){
+					//Tenter d'annuler le retrait. Si ça échoue, sortir tout de suite
+					if(!utils.depositAccount(current, previous.montant)){
+						return;
+					}
+				}
+			}
+				
+			//Traiter la nouvelle opération
+			if(current.type == 1){
+				utils.depositAccount(current, current.montant);
+			}
+			else if(current.type == 2){
+				utils.withdrawAccount(current, current.montant);
+			}
+			else{
+				gs.addErrorMessage("Unrecognized operation type. Operation aborted.");
+				current.setAbortAction(true);
+			}
+		}
+		//Si transaction rejetée après être complétée, annuler la transaction
+		else if(current.statut == 4 && previous.statut == 3)
+		{
+			//Annuler dépôt
+			if(previous.type == 1){
+				//Tenter d'annuler le dépot. Si ça échoue, sortir tout de suite
+				if(!utils.withdrawAccount(current, previous.montant)){
+					return;
+				}
+			}
+			//Annuler retrait
+			else if(previous.type == 2){
+				//Tenter d'annuler le retrait. Si ça échoue, sortir tout de suite
+				if(!utils.depositAccount(current, previous.montant)){
+					return;
+				}
+			}
+		}
+	}
+	else{
+		gs.addErrorMessage("Insufficient rights. You need to have the support role.");
+		current.setAbortAction(true);
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>fred.luddy</sys_created_by>
+        <sys_created_on>2018-10-10 15:43:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1ee0bb714fc92700df4bc3818110c79b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Update Operation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_script_1ee0bb714fc92700df4bc3818110c79b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 18:08:25</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=1ee0bb714fc92700df4bc3818110c79b"/>
+</record_update>

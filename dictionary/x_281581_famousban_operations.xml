@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Operations" max_length="40" name="x_281581_famousban_operations" type="collection">
+        <element label="To be validated by support" max_length="40" name="a_valider_par_le_support" type="boolean"/>
+        <element label="Client" mandatory="true" max_length="32" name="client" reference="sys_user" type="reference"/>
+        <element label="Created on" mandatory="true" max_length="40" name="creee_le" type="glide_date_time"/>
+        <element label="Created by" mandatory="true" max_length="32" name="creee_par" reference="sys_user" type="reference"/>
+        <element label="Completed on" max_length="40" name="effectuee_le" type="glide_date_time"/>
+        <element label="Completed by" max_length="32" name="effectuee_par" reference="sys_user" type="reference"/>
+        <element default="0" label="Amount" mandatory="true" max_length="40" name="montant" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="1" label="Statut" mandatory="true" max_length="40" name="statut" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Creation" language="fq" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Creation" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Validation" language="fq" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Validation" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Effectuée" language="fq" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Rejected" sequence="4" value="4"/>
+                <element inactive_on_update="false" label="Rejetée" language="fq" sequence="4" value="4"/>
+            </choice>
+        </element>
+        <element choice="3" default="1" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Deposit" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Dépôt" language="fq" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Retrait" language="fq" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Withdrawal" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="effectuee_par"/>
+        </index>
+        <index name="index2">
+            <element name="client"/>
+        </index>
+        <index name="index3">
+            <element name="creee_par"/>
+        </index>
+    </element>
+</database>

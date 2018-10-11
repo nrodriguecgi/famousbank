@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="8ae8e73d4f892700df4bc3818110c796" sys_domain="global" table="x_281581_famousban_operations" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>fred.luddy</sys_created_by>
+            <sys_created_on>2018-10-10 15:05:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4ee82b3d4f892700df4bc3818110c760</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_281581_famousban_operations" name="x_281581_famousban_operations" sys_domain="global" view="7c3d6b2d4f412700df4bc3818110c7a3">8ae8e73d4f892700df4bc3818110c796</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_281581_famousban_operations" sys_domain="global" view="7c3d6b2d4f412700df4bc3818110c7a3">f43d6b2d4f412700df4bc3818110c7a7</sys_ui_section>
+            <sys_updated_by>fred.luddy</sys_updated_by>
+            <sys_updated_on>2018-10-10 15:05:53</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>fred.luddy</sys_created_by>
+            <sys_created_on>2018-10-10 15:05:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4ae82b3d4f892700df4bc3818110c761</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_281581_famousban_operations" name="x_281581_famousban_operations" sys_domain="global" view="7c3d6b2d4f412700df4bc3818110c7a3">8ae8e73d4f892700df4bc3818110c796</sys_ui_form>
+            <sys_ui_section caption="Validation" display_value="Validation" name="x_281581_famousban_operations" sys_domain="global" view="7c3d6b2d4f412700df4bc3818110c7a3">c6e8e73d4f892700df4bc3818110c795</sys_ui_section>
+            <sys_updated_by>fred.luddy</sys_updated_by>
+            <sys_updated_on>2018-10-10 15:05:54</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_281581_famousban_operations</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>fred.luddy</sys_created_by>
+            <sys_created_on>2018-10-10 15:05:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8ae8e73d4f892700df4bc3818110c796</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_281581_famousban_operations</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+            <sys_update_name>sys_ui_form_sections_8ae8e73d4f892700df4bc3818110c796</sys_update_name>
+            <sys_updated_by>fred.luddy</sys_updated_by>
+            <sys_updated_on>2018-10-10 15:05:53</sys_updated_on>
+            <sys_user/>
+            <view display_value="Requiring Validation" name="famous_bank_requiring_validation">7c3d6b2d4f412700df4bc3818110c7a3</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

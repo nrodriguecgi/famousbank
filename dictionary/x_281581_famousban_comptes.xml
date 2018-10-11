@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Accounts" max_length="40" name="x_281581_famousban_comptes" type="collection">
+        <element label="Client" mandatory="true" max_length="32" name="client" reference="sys_user" type="reference"/>
+        <element default="0" label="Balance" mandatory="true" max_length="40" name="montant" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <index name="index">
+            <element name="client"/>
+        </index>
+    </element>
+</database>

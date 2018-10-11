@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="a_valider_par_le_support" label="À valider par le support" language="fq" table="x_281581_famousban_operations">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>a_valider_par_le_support</element>
+            <help/>
+            <hint/>
+            <label>À valider par le support</label>
+            <language>fq</language>
+            <name>x_281581_famousban_operations</name>
+            <plural>À valider par le support</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-10 13:52:33</sys_created_on>
+            <sys_id>11181b714f892700df4bc3818110c7f9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>À valider par le support</sys_name>
+            <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+            <sys_update_name>sys_documentation_x_281581_famousban_operations_a_valider_par_le_support_fq</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-10 13:52:33</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

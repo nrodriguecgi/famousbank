@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_281581_famousban.FamousBankUtils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>FamousBankUtils</name>
+        <script><![CDATA[var FamousBankUtils = Class.create();
+FamousBankUtils.prototype = {
+    initialize: function() {
+    },
+	//Vérifier si un compte existe pour ce client
+	checkAccountExists: function(id_client){
+		var compte = new GlideRecord('x_281581_famousban_comptes');
+		compte.addQuery('client', id_client);
+		compte.query();
+		
+		if(compte.next()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	},
+	//Sert à la création du compte d'un client
+	createAccount: function(id_client){
+		var compte = new GlideRecord('x_281581_famousban_comptes');
+		compte.addQuery('client', id_client);
+		compte.query();
+		
+		//Un seul compte par client, ne pas créer si déja existant
+		if(compte.next()){
+			return false;
+		}
+		else{
+			var nouveau_compte = new GlideRecord('x_281581_famousban_comptes');
+			nouveau_compte.initialize(); 
+			nouveau_compte.client = id_client; 
+			nouveau_compte.montant = 0; 
+			nouveau_compte.insert();
+			
+			return true;
+		}
+	},
+	//Sert à ajouter un montant dans un compte
+	addAmount: function(id_client, amount){
+		var compte = new GlideRecord('x_281581_famousban_comptes');
+		compte.addQuery('client', id_client);
+		compte.query();
+		
+		//Un seul compte par client, ne pas créer si déja existant
+		if(compte.next()){			
+			compte.montant += amount;
+			compte.update();
+			return compte.montant;
+		}
+		else{	
+			return false;
+		}
+	},
+	//Sert à retirer un montant d'un compte
+	withdrawAmount: function(id_client, amount){
+		var compte = new GlideRecord('x_281581_famousban_comptes');
+		compte.addQuery('client', id_client);
+		compte.query();
+		
+		//Un seul compte par client, ne pas créer si déja existant
+		if(compte.next())
+		{			
+			//Retourner montant négatif pour indiquer qu'il n'y a pas assez d'argent dans le compte
+			if(amount > compte.montant){
+				return compte.montant - amount;
+			}
+			//Si assez de fonds, soustraire et retourne le nouveau solde
+			else{
+				compte.montant -= amount;
+				compte.update();
+				
+				return compte.montant;
+			}
+		}
+		//Si non existant, retourner false
+		else{
+			return false;
+		}
+	},
+	//Function pour déposer un montant dans un compte, peut annuler l'opération en cours
+	depositAccount: function (current, amount)
+	{
+		var success = false;
+		var nouveau_solde = this.addAmount(current.client, amount);
+	
+		if(nouveau_solde == false){
+			gs.addErrorMessage("Problem adding amount to account. Operation cancelled.");
+			current.setAbortAction(true);
+		}
+		else{
+			gs.info("Added " + amount + " in account of client " + current.client + ". New balance: " + nouveau_solde);
+			success = true;
+		}
+		return success;
+	},
+	//Function pour retirer un montant dans un compte, peut annuler l'opération en cours
+	withdrawAccount: function(current, amount)
+	{
+		var success = false;
+		var nouveau_solde = this.withdrawAmount(current.client, amount);
+
+		if(nouveau_solde == false){
+			gs.addErrorMessage("Problem withdrawing amount from account. Operation cancelled.");
+			current.setAbortAction(true);
+		}
+		else if(nouveau_solde < 0){
+			gs.addErrorMessage("This account does not have sufficients funds to withdraw " + current.montant + "$.");
+			current.setAbortAction(true);
+		}
+		else{
+			gs.info("Withdrew " + current.montant + " in account of client " + current.client + ". New balance: " + nouveau_solde);
+			success = true;
+		}
+		return success;
+	},
+    type: 'FamousBankUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-09 19:32:58</sys_created_on>
+        <sys_id>293717ed4f012700df4bc3818110c7b9</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>FamousBankUtils</sys_name>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_script_include_293717ed4f012700df4bc3818110c7b9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 19:25:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

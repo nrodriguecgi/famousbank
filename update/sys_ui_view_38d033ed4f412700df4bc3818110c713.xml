@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>famous_bank_all_operations</name>
+        <roles>x_281581_famousban.administrateur_cdr</roles>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-09 21:02:00</sys_created_on>
+        <sys_id>38d033ed4f412700df4bc3818110c713</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>famous_bank_all_operations</sys_name>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_ui_view_38d033ed4f412700df4bc3818110c713</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-09 21:03:12</sys_updated_on>
+        <title>All Operations</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

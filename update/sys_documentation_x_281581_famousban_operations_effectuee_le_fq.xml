@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="effectuee_le" label="Effectuée le" language="fq" table="x_281581_famousban_operations">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>effectuee_le</element>
+            <help/>
+            <hint/>
+            <label>Effectuée le</label>
+            <language>fq</language>
+            <name>x_281581_famousban_operations</name>
+            <plural>Effectuées le</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-10 13:48:43</sys_created_on>
+            <sys_id>7b271f314f892700df4bc3818110c7bc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Effectuée le</sys_name>
+            <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+            <sys_update_name>sys_documentation_x_281581_famousban_operations_effectuee_le_fq</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-10 13:48:43</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

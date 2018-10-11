@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>montant</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Operations On Load</name>
+        <order/>
+        <script><![CDATA[function onLoad() 
+{
+	
+	//Pour les modifications d'opérations, seulement afficher certains statuts afin d'empêche de retourner en arrière
+	var statut = g_form.getValue('statut');
+		
+	//Validation
+	if(statut == 2){
+		g_form.clearOptions('statut');
+		g_form.addOption('statut', '', 'Approve or reject');
+		g_form.addOption('statut', '3', 'Completed');
+		g_form.addOption('statut', '4', 'Rejected');		
+		
+		g_form.setReadOnly('client', true);
+		g_form.setReadOnly('a_valider_par_le_support', true);
+	}
+	//Complété ou rejeté - Non Modifiable
+	else if (statut == 3 || statut == 4){
+		g_form.clearOptions('statut');
+		g_form.addOption('statut', '3', 'Completed');
+		g_form.addOption('statut', '4', 'Rejected');
+		
+		g_form.setReadOnly('client', true);
+		g_form.setReadOnly('a_valider_par_le_support', true);
+	}
+	
+	//Mettre certains champs readonly
+	g_form.setReadOnly('creee_le', true);
+	g_form.setReadOnly('creee_par', true);
+	g_form.setReadOnly('effectuee_le', true);
+	g_form.setReadOnly('effectuee_par', true);
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>fred.luddy</sys_created_by>
+        <sys_created_on>2018-10-10 15:16:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0f4b63bd4f892700df4bc3818110c7fe</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Operations On Load</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_script_client_0f4b63bd4f892700df4bc3818110c7fe</sys_update_name>
+        <sys_updated_by>fred.luddy</sys_updated_by>
+        <sys_updated_on>2018-10-10 16:00:08</sys_updated_on>
+        <table>x_281581_famousban_operations</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

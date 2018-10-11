@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_translated">
+    <sys_translated action="INSERT_OR_UPDATE">
+        <element>hint</element>
+        <id/>
+        <label>Ajouter une nouvelle opération</label>
+        <language>fq</language>
+        <name>sys_app_module</name>
+        <sys_class_name>sys_translated</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-10 19:52:32</sys_created_on>
+        <sys_id>708ae80a4f4d2700df4bc3818110c774</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ajouter une nouvelle opération</sys_name>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_translated_708ae80a4f4d2700df4bc3818110c774</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-10 19:52:32</sys_updated_on>
+        <value>Ajouter une nouvelle opération</value>
+    </sys_translated>
+</record_update>
