@@ -90,13 +90,17 @@ FamousBankUtils.prototype = {
 	{
 		var success = false;
 		var nouveau_solde = this.addAmount(current.client, amount);
+		var message, message_array;
 	
 		if(nouveau_solde == false){
-			gs.addErrorMessage("Problem adding amount to account. Operation cancelled.");
+			message = gs.getMessage("Problem adding amount to account. Operation cancelled.");
+			gs.addErrorMessage(message);
 			current.setAbortAction(true);
 		}
 		else{
-			gs.info("Added " + amount + " in account of client " + current.client + ". New balance: " + nouveau_solde);
+			message_array = [current.montant, current.client, nouveau_solde];
+			message = gs.getMessage("Added {0} in account of client {1}. New balance: {2}", message_array);
+			gs.info(message);
 			success = true;
 		}
 		return success;
@@ -105,18 +109,23 @@ FamousBankUtils.prototype = {
 	withdrawAccount: function(current, amount)
 	{
 		var success = false;
-		var nouveau_solde = this.withdrawAmount(current.client, amount);
+		var nouveau_solde = this.withdrawAmount(current.client, amount).toFixed(2);
+		var message, message_array;
 
 		if(nouveau_solde == false){
-			gs.addErrorMessage("Problem withdrawing amount from account. Operation cancelled.");
+			message = gs.getMessage("Problem withdrawing amount from account. Operation cancelled.");
+			gs.addErrorMessage(message);
 			current.setAbortAction(true);
 		}
 		else if(nouveau_solde < 0){
-			gs.addErrorMessage("This account does not have sufficients funds to withdraw " + current.montant + "$.");
+			message = gs.getMessage("This account does not have sufficient funds to withdraw {0}$.",[nouveau_solde*-1]);
+			gs.addErrorMessage(message);
 			current.setAbortAction(true);
 		}
 		else{
-			gs.info("Withdrew " + current.montant + " in account of client " + current.client + ". New balance: " + nouveau_solde);
+			message_array = [current.montant, current.client, nouveau_solde];
+			message = gs.getMessage("Withdrew {0} in account of client {1}. New balance: {2}", message_array);
+			gs.info(message);
 			success = true;
 		}
 		return success;
@@ -127,13 +136,13 @@ FamousBankUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-09 19:32:58</sys_created_on>
         <sys_id>293717ed4f012700df4bc3818110c7b9</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>FamousBankUtils</sys_name>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_script_include_293717ed4f012700df4bc3818110c7b9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-10 19:25:58</sys_updated_on>
+        <sys_updated_on>2018-10-12 19:38:18</sys_updated_on>
     </sys_script_include>
 </record_update>

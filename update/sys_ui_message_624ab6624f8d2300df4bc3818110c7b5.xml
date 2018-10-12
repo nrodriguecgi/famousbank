@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
     <sys_ui_message action="INSERT_OR_UPDATE">
         <application/>
-        <key>This account does not have sufficient funds to withdraw {0}$.</key>
+        <key>Added {0} in account of client {1}. New balance: {2}</key>
         <language>fq</language>
-        <message>Ce compte ne possède pas assez de fonds pour retirer {0}$.</message>
+        <message>Ajouté {0} in account of client {1}. Nouveau solde: {2}</message>
         <sys_class_name>sys_ui_message</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-10 19:27:32</sys_created_on>
-        <sys_id>b994e8064f4d2700df4bc3818110c72c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>This account does not have sufficient funds to withdraw {0}$.</sys_name>
+        <sys_created_on>2018-10-12 19:38:08</sys_created_on>
+        <sys_id>624ab6624f8d2300df4bc3818110c7b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Added {0} in account of client {1}. New balance: {2}</sys_name>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
         <sys_policy/>
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
-        <sys_update_name>sys_ui_message_b994e8064f4d2700df4bc3818110c72c</sys_update_name>
+        <sys_update_name>sys_ui_message_624ab6624f8d2300df4bc3818110c7b5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-12 19:24:03</sys_updated_on>
+        <sys_updated_on>2018-10-12 19:38:08</sys_updated_on>
     </sys_ui_message>
 </record_update>

@@ -7,7 +7,7 @@
         <element label="Completed on" max_length="40" name="effectuee_le" type="glide_date_time"/>
         <element label="Completed by" max_length="32" name="effectuee_par" reference="sys_user" type="reference"/>
         <element default="0" label="Amount" mandatory="true" max_length="40" name="montant" type="integer"/>
-        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="ID Opération" max_length="40" name="number" type="string"/>
         <element choice="3" default="1" label="Statut" mandatory="true" max_length="40" name="statut" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Creation" language="fq" sequence="1" value="1"/>
