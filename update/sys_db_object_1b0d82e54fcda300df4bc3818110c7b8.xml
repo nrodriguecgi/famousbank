@@ -23,14 +23,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-09 13:47:39</sys_created_on>
         <sys_id>1b0d82e54fcda300df4bc3818110c7b8</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Accounts</sys_name>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
         <sys_policy/>
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_db_object_1b0d82e54fcda300df4bc3818110c7b8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-09 18:30:13</sys_updated_on>
+        <sys_updated_on>2018-10-14 23:00:16</sys_updated_on>
         <update_access>false</update_access>
         <user_role display_value="x_281581_famousban.administrateur_cdr" name="x_281581_famousban.administrateur_cdr">8ca3a6654f01e300df4bc3818110c7ba</user_role>
         <ws_access>false</ws_access>

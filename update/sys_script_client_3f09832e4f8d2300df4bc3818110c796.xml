@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>client</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Show Account Balance</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+	  g_form.setValue('u_solde', "");
+      return;
+   }
+			
+   var ajax = new GlideAjax('FamousBankUtilsClient'); 
+	
+   ajax.addParam('sysparm_name', 'getBalanceAccount');
+   ajax.addParam('sysparm_client', g_form.getValue('client'));
+   ajax.getXML(displayAccountBalance);
+	   
+}
+
+function displayAccountBalance(response)
+{
+	var balance = response.responseXML.documentElement.getAttribute("answer");
+	
+	jslog('Balance: ' + balance);
+	
+	if(balance != 'false'){
+		g_form.setValue('u_solde', balance);
+	}
+	else{
+		g_form.setValue('u_solde', 0);
+	}
+	
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-12 20:49:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3f09832e4f8d2300df4bc3818110c796</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Show Account Balance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_script_client_3f09832e4f8d2300df4bc3818110c796</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-15 00:09:23</sys_updated_on>
+        <table>x_281581_famousban_operations</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

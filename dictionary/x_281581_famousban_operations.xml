@@ -28,6 +28,7 @@
                 <element inactive_on_update="false" label="Withdrawal" sequence="2" value="2"/>
             </choice>
         </element>
+        <element label="Account Balance" max_length="40" name="u_solde" read_only="true" type="integer"/>
         <index name="index">
             <element name="effectuee_par"/>
         </index>

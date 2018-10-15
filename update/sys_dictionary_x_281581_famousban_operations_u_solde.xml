@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_281581_famousban_operations">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="u_solde" table="x_281581_famousban_operations">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
-        <column_label/>
+        <column_label>Account Balance</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -27,18 +22,18 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element/>
+        <element>u_solde</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Collection">collection</internal_type>
+        <internal_type display_value="Integer">integer</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>x_281581_famousban_operations</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -52,16 +47,16 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-09 14:00:01</sys_created_on>
-        <sys_id>133056694fcda300df4bc3818110c73d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_281581_famousban_operations</sys_name>
+        <sys_created_on>2018-10-15 00:04:59</sys_created_on>
+        <sys_id>46aa86534fc5a300df4bc3818110c720</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Account Balance</sys_name>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
         <sys_policy/>
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
-        <sys_update_name>sys_dictionary_x_281581_famousban_operations_null</sys_update_name>
+        <sys_update_name>sys_dictionary_x_281581_famousban_operations_u_solde</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-09 14:00:01</sys_updated_on>
+        <sys_updated_on>2018-10-15 00:05:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
