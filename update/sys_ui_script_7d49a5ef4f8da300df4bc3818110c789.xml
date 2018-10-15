@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_281581_famousban.FamousBankUIScript</name>
+        <script><![CDATA[var x_281581_famousban = x_281581_famousban || {};
+
+x_281581_famousban.FamousBankUIScript = (function() {
+	"use strict";
+
+/* set your private variables and functions here. For example: 
+	var privateVar = 0; 
+	function private_function() {
+		return ++privateVar;
+	}
+*/
+	
+	function displayAccountBalancePriv(response)
+	{
+		var balance = response.responseXML.documentElement.getAttribute("answer");
+
+		jslog('Ajax Balance: ' + balance);
+
+		if(balance != 'false'){
+			g_form.setValue('u_solde', balance);
+		}
+		else{
+			g_form.setValue('u_solde', 0);
+		}
+
+	}
+
+/* Share variables between multiple UI scripts by adding them to your scope object. For example: 
+	x_281581_famousban.sharedVar = 0; 
+
+ Then access them in your scripts the same way. For example: 
+	function get_shared() {
+		return x_281581_famousban.sharedVar;
+	}
+*/
+
+	return {
+
+		displayAccountBalance: function() 
+		{
+			var ajax = new GlideAjax('FamousBankUtilsClient'); 
+	
+		   ajax.addParam('sysparm_name', 'getBalanceAccount');
+		   ajax.addParam('sysparm_client', g_form.getValue('client'));
+		   ajax.getXML(displayAccountBalancePriv);
+		},
+		type:  "FamousBankUIScript"
+	};
+})();
+]]></script>
+        <script_name>FamousBankUIScript</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-10-15 16:21:51</sys_created_on>
+        <sys_id>7d49a5ef4f8da300df4bc3818110c789</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_281581_famousban.FamousBankUIScript</sys_name>
+        <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
+        <sys_update_name>sys_ui_script_7d49a5ef4f8da300df4bc3818110c789</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-10-15 16:27:53</sys_updated_on>
+        <ui_type>10</ui_type>
+        <use_scoped_format>true</use_scoped_format>
+    </sys_ui_script>
+</record_update>

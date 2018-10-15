@@ -36,8 +36,8 @@
 		var cree_par = gs.getUserID();
 		var cree_le = new GlideDateTime();
 
-		current.creee_par = cree_par;
-		current.creee_le = cree_le;
+		current.setValue('creee_par', cree_par);
+		current.setValue('creee_le', cree_le);
 
 		//Instantier classe fonctions utiles
 		var utils = new FamousBankUtils();
@@ -54,15 +54,15 @@
 
 		//Statut En validation
 		if(current.a_valider_par_le_support == true){
-			current.statut = "2";
+			current.setValue('statut', 2);
 		}
 		//Sinon, effectuer l'opération
 		else
 		{	
-			if(current.type == 1){
+			if(current.getValue('type') == 1){
 				utils.depositAccount(current, current.montant);
 			}
-			else if(current.type == 2){
+			else if(current.getValue('type') == 2){
 				utils.withdrawAccount(current, current.montant);
 			}
 			else{
@@ -71,9 +71,9 @@
 			}
 
 			//Si non avorté, change le statut à Effectuée
-			current.statut = "3";
-			current.effectuee_le = new GlideDateTime();
-			current.effectuee_par = gs.getUserID();
+			current.setValue('statut', 3);
+			current.setValue('effectuee_le', new GlideDateTime());
+			current.setValue('effectuee_par', gs.getUserID());
 		}
 	}
 	else{
@@ -88,7 +88,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>864153e14f8de300df4bc3818110c76c</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Insert New Operation</sys_name>
         <sys_overrides/>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
@@ -96,7 +96,7 @@
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_script_864153e14f8de300df4bc3818110c76c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-14 23:07:36</sys_updated_on>
+        <sys_updated_on>2018-10-15 16:49:50</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
