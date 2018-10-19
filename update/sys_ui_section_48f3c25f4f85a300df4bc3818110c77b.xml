@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Account" section_id="48f3c25f4f85a300df4bc3818110c77b" sys_domain="global" table="x_281581_famousban_operations" version="3" view="famous_bank_new_operation">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>u_solde</element>
+            <element>account_id.montant</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-15 00:05:00</sys_created_on>
-            <sys_id>ceaa86534fc5a300df4bc3818110c74d</sys_id>
+            <sys_created_on>2018-10-18 20:52:27</sys_created_on>
+            <sys_id>acf4c2a84f156700df4bc3818110c718</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="Account" display_value="Account" name="x_281581_famousban_operations" sys_domain="global" view="9f44f6ed4f01e300df4bc3818110c71f">48f3c25f4f85a300df4bc3818110c77b</sys_ui_section>
+            <sys_ui_section caption="Account" display_value="Compte" name="x_281581_famousban_operations" sys_domain="global" view="9f44f6ed4f01e300df4bc3818110c71f">48f3c25f4f85a300df4bc3818110c77b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-15 00:05:00</sys_updated_on>
+            <sys_updated_on>2018-10-18 20:52:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

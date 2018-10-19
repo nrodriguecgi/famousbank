@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="u_solde" label="Solde Compte" language="fq" table="x_281581_famousban_operations">
+    <sys_documentation element="account_id" label="Account ID" language="en" table="x_281581_famousban_operations">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>u_solde</element>
+            <element>account_id</element>
             <help/>
             <hint/>
-            <label>Solde Compte</label>
-            <language>fq</language>
+            <label>Account ID</label>
+            <language>en</language>
             <name>x_281581_famousban_operations</name>
-            <plural/>
+            <plural>Account IDs</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-15 00:16:13</sys_created_on>
-            <sys_id>fe2d42d34fc5a300df4bc3818110c7dd</sys_id>
+            <sys_created_on>2018-10-18 17:20:04</sys_created_on>
+            <sys_id>6d54dda44f916700df4bc3818110c729</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>Solde Compte</sys_name>
+            <sys_name>Account ID</sys_name>
             <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
             <sys_policy/>
             <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
-            <sys_update_name>sys_documentation_x_281581_famousban_operations_u_solde_fq</sys_update_name>
+            <sys_update_name>sys_documentation_x_281581_famousban_operations_account_id_en</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-15 00:16:13</sys_updated_on>
+            <sys_updated_on>2018-10-18 17:20:04</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

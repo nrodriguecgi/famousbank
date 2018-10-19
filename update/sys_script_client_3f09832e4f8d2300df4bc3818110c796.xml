@@ -11,8 +11,8 @@
         <name>Show Account Balance</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-   if (isLoading || newValue === '') {
-	  g_form.setValue('u_solde', "");
+   if (newValue === '') {
+	   g_form.setValue('account_id.montant', "");
       return;
    }
 			
@@ -28,13 +28,11 @@ function displayAccountBalance(response)
 {
 	var balance = response.responseXML.documentElement.getAttribute("answer");
 	
-	jslog('Ajax Balance: ' + balance);
-	
 	if(balance != 'false'){
-		g_form.setValue('u_solde', balance);
+		g_form.setValue('account_id.montant', balance);
 	}
 	else{
-		g_form.setValue('u_solde', 0);
+		g_form.setValue('account_id.montant', '0');
 	}
 	
 }
@@ -45,7 +43,7 @@ function displayAccountBalance(response)
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3f09832e4f8d2300df4bc3818110c796</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>Show Account Balance</sys_name>
         <sys_overrides/>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
@@ -53,7 +51,7 @@ function displayAccountBalance(response)
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_script_client_3f09832e4f8d2300df4bc3818110c796</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-15 17:03:06</sys_updated_on>
+        <sys_updated_on>2018-10-19 14:41:39</sys_updated_on>
         <table>x_281581_famousban_operations</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

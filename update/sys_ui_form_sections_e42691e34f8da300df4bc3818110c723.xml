@@ -14,6 +14,20 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2018-10-15 14:54:00</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-10-18 19:04:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>724ca9284fd16700df4bc3818110c7e7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_281581_famousban_operations" name="x_281581_famousban_operations" sys_domain="global" view="38d033ed4f412700df4bc3818110c713">e42691e34f8da300df4bc3818110c723</sys_ui_form>
+            <sys_ui_section caption="Account" display_value="Compte" name="x_281581_famousban_operations" sys_domain="global" view="38d033ed4f412700df4bc3818110c713">364ca9284fd16700df4bc3818110c7e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-10-18 19:04:44</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_281581_famousban_operations</name>
             <roles/>

@@ -17,25 +17,12 @@
 	var statut = g_form.getValue('statut');
 		
 	//Validation
-	if(statut == 2){
-		g_form.clearOptions('statut');
-		
-		//var array_messages = ['Approve or reject', 'Completed', 'Rejected'];
-		//getMessages(array_messages,'replaceSelectOptions');
-		
-		g_form.addOption('statut', '', getMessage('Approve or reject'));
-		g_form.addOption('statut', '3', getMessage('Completed'));
-		g_form.addOption('statut', '4', getMessage('Rejected'));	
-		
+	if(statut == 2){		
 		g_form.setReadOnly('client', true);
 		g_form.setReadOnly('a_valider_par_le_support', true);
 	}
 	//Complété ou rejeté - Non Modifiable
-	else if (statut == 3 || statut == 4){
-		g_form.clearOptions('statut');
-		g_form.addOption('statut', '3', getMessage('Completed'));
-		g_form.addOption('statut', '4', getMessage('Rejected'));	
-		
+	else if (statut == 3 || statut == 4){		
 		g_form.setReadOnly('client', true);
 		g_form.setReadOnly('a_valider_par_le_support', true);
 	}
@@ -45,41 +32,15 @@
 	g_form.setReadOnly('creee_par', true);
 	g_form.setReadOnly('effectuee_le', true);
 	g_form.setReadOnly('effectuee_par', true);
-	
-	/*var balance = g_form.getValue('u_solde');
-	var client = g_form.getValue('client');
-	jslog('On load balance: ' + balance);
-	
-	if(balance == '' && client != ''){
-		var ajax = new GlideAjax('FamousBankUtilsClient'); 	
-	   ajax.addParam('sysparm_name', 'getBalanceAccount');
-	   ajax.addParam('sysparm_client', g_form.getValue('client'));
-	   ajax.getXML(displayAccountBalance);
-	}*/
    
-}
-
-/*function displayAccountBalance(response)
-{
-	var balance = response.responseXML.documentElement.getAttribute("answer");
-	
-	jslog('Ajax Balance: ' + balance);
-	
-	if(balance != 'false'){
-		g_form.setValue('u_solde', balance);
-	}
-	else{
-		g_form.setValue('u_solde', 0);
-	}
-	
-}*/]]></script>
+}]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>fred.luddy</sys_created_by>
         <sys_created_on>2018-10-10 15:16:55</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0f4b63bd4f892700df4bc3818110c7fe</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Operations On Load</sys_name>
         <sys_overrides/>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
@@ -87,7 +48,7 @@
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_script_client_0f4b63bd4f892700df4bc3818110c7fe</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-15 16:50:26</sys_updated_on>
+        <sys_updated_on>2018-10-19 14:23:08</sys_updated_on>
         <table>x_281581_famousban_operations</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>

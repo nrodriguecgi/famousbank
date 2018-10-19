@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Validation" section_id="c6e8e73d4f892700df4bc3818110c795" sys_domain="global" table="x_281581_famousban_operations" version="3" view="famous_bank_requiring_validation">
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>statut</element>
-            <position>0</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-10-15 15:54:33</sys_created_on>
-            <sys_id>2bf3a52f4f8da300df4bc3818110c76f</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="Validation" display_value="Validation" name="x_281581_famousban_operations" sys_domain="global" view="7c3d6b2d4f412700df4bc3818110c7a3">c6e8e73d4f892700df4bc3818110c795</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-10-15 15:54:33</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption>Validation</caption>
             <header>false</header>

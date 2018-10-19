@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Donne les droits d'ajouter des opérations d'ajout ou de retrait.</description>
         <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_281581_famousban.commis</name>

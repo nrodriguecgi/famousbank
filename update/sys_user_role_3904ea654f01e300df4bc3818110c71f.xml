@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Donne les droits de modifier le montant d'un compte client.</description>
         <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_281581_famousban.gestionnaire</name>

@@ -34,22 +34,8 @@
 	//Vérifier que l'usager possède des droits de modification
 	if(gs.hasRole('x_281581_famousban.support'))
 	{
-		//Si opération complétée venant du statut de validation/rejeté, effectuer le dépot ou le retrait
-		if(current.statut == 3 && (previous.statut == 2 && current.statut == 4) )
-		{
-			if(current.type == 1){
-				utils.depositAccount(current, current.montant);
-			}
-			else if(current.type == 2){
-				utils.withdrawAccount(current, current.montant);
-			}
-			else{
-				gs.addErrorMessage("Unrecognized operation type. Operation aborted.");
-				current.setAbortAction(true);
-			}
-		}
 		//Modification opération complétée
-		else if(current.statut == 3)
+		if(current.statut == '3' && previous.statut == '3')
 		{
 			//Initialiser effectué par et effectué le
 			current.effectuee_le = new GlideDateTime();
@@ -86,24 +72,6 @@
 				current.setAbortAction(true);
 			}
 		}
-		//Si transaction rejetée après être complétée, annuler la transaction
-		else if(current.statut == 4 && previous.statut == 3)
-		{
-			//Annuler dépôt
-			if(previous.type == 1){
-				//Tenter d'annuler le dépot. Si ça échoue, sortir tout de suite
-				if(!utils.withdrawAccount(current, previous.montant)){
-					return;
-				}
-			}
-			//Annuler retrait
-			else if(previous.type == 2){
-				//Tenter d'annuler le retrait. Si ça échoue, sortir tout de suite
-				if(!utils.depositAccount(current, previous.montant)){
-					return;
-				}
-			}
-		}
 	}
 	else{
 		gs.addErrorMessage("Insufficient rights. You need to have the support role.");
@@ -117,7 +85,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1ee0bb714fc92700df4bc3818110c79b</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Update Operation</sys_name>
         <sys_overrides/>
         <sys_package display_value="FamousBank" source="x_281581_famousban">161c86a54f4da300df4bc3818110c7fd</sys_package>
@@ -125,7 +93,7 @@
         <sys_scope display_value="FamousBank">161c86a54f4da300df4bc3818110c7fd</sys_scope>
         <sys_update_name>sys_script_1ee0bb714fc92700df4bc3818110c79b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-14 23:05:39</sys_updated_on>
+        <sys_updated_on>2018-10-19 14:58:18</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
